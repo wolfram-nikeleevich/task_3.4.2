@@ -1,11 +1,18 @@
 public class Main {
-  public static void main(String[] args) {
-    BonusService service = new BonusService();
+    public static void main(String[] args) {
+        BonusService service = new BonusService();
 
-    long amount = 1000_60;
-    boolean registered = true;
+        long amount = 1000_60;
+        boolean registered = true;
+        long expected = 30;
 
-    service.calculate(amount, registered);
-  }
+        long actual = service.calculate(amount, registered);
+        boolean pass = expected == actual;
+        if (pass) {
+            System.out.println("test passed");
+        } else {
+            System.out.println("test failed");
+        }
+    }
 }
 
